@@ -5,9 +5,7 @@ name: Node.js Package
 
 on:
   push:
-      branches: [
-          feature/cicd
-        ]
+    branches: [feature/cicd]
         
 
 jobs:
