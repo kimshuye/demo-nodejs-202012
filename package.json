@@ -15,8 +15,9 @@
     "nock": "^13.0.5",
     "supertest": "^6.0.1"
   },
- "scripts": {
-    "test": "jest --coverage",
+  "scripts": {
+    "test": "jest --coverage --verbose",
+    "test:gateway": "API_URL=https://localhost:9999 jest --coverage",
     "start": "node index.js"
   },
   "jest": {

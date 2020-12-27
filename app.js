@@ -4,7 +4,7 @@ const app = express();
 const userGateway = require("./userGateway");
 
 app.get("/users", (req, res) => {
-  userGateway.getData().then((response) => {
+  userGateway.getAllUser().then((response) => {
     res.send(response);
   });
 });

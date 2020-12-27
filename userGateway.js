@@ -2,7 +2,7 @@ const axios = require("axios");
 
 function getData() {
   return axios
-    .get("https://jsonplaceholder.cypress.io/users/1")
+    .get(`https://jsonplaceholder.cypress.io/users/1`)
     .then(function (response) {
       return {
         id: response.data.id,
@@ -22,7 +22,7 @@ function getData() {
 async function getUser() {
   try {
     const response = await axios.get(
-      "https://jsonplaceholder.cypress.io/users/1"
+      `https://jsonplaceholder.cypress.io/users/1`
     );
     return {
       id: response.data.id,
@@ -38,4 +38,39 @@ async function getUser() {
   }
 }
 
-module.exports = { getData, getUser };
+
+async function getAllUser() {
+  
+  return axios
+    .get(`https://jsonplaceholder.cypress.io/users`)
+    .then(function (response) {
+      return {
+        code: response.status,
+        data: response.data
+      };
+    })
+    .catch(function (error) {
+      return {
+        code: 500,
+        response: error,
+      };
+    });
+  
+}
+
+function getDataNotFound() {
+  return axios
+    .get(`https://jsonplaceholder.cypress.io/users/0`)
+    .then(function (response) {
+      return {
+      };
+    })
+    .catch(function (error) {
+      return {
+        code: 404,
+        response: error,
+      };
+    });
+}
+
+module.exports = { getData, getUser,getAllUser,getDataNotFound };
