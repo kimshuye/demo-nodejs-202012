@@ -4,7 +4,7 @@
 
 ```bash
 # Service app
-export APP_LOCATION1=.
+export APP_LOCATION1=app
 export SERVICE_NAME1=app
 export ORG_NAME1=tok
 export CONTAINER_NAME1=app
