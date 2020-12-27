@@ -5,9 +5,11 @@ name: Node.js Package
 
 on:
   push:
-    branches: [feature/cicd]
+    branches: 
+      - feature/cicd
   pull_request:
-    branches: [feature/cicd]
+    branches: 
+      - feature/cicd
         
 
 jobs:
