@@ -7,7 +7,7 @@ const app = require("../app");
 test("Show 'Hello World' Test", (done) => {
   // Mock server
   nock("http://localhost:8080")
-      .defaultReplyHeaders({ "access-control-allow-origin": "*" })
+      // .defaultReplyHeaders({ "access-control-allow-origin": "*" })
       .get("/")
       .reply(200,
         'Hello World'
