@@ -1,15 +1,22 @@
-const Welcomto = function (id, name) {
-  this.id = id;
-  this.name = name;
+class Welcometo extends Sequelize.Model {}
+
+const createWelcometoModel = (db) => {
+ const model = Welcometo.init(
+ {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+    },
+    name: Sequelize.STRING,
+  },
+  {
+    sequelize: db,
+    modelName: "welcometo",
+    freezeTableName: true,
+  }
+ );
+ return model;
 };
 
-class Welcomto {
-  constructor(id, name) {
-    this.id = id;
-    this.name = name;
-  }
-}
-
-// const welcomto = new Welcomto(1, "World");
-
-module.exports = Welcomto;
+module.exports = Welcometo;
