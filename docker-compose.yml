@@ -2,6 +2,8 @@
 version: '3'
 services:
   app:
+    # depends_on:
+    #   - db
     container_name: app
     image: app:1.0.0
     # build:
@@ -9,4 +11,26 @@ services:
     #   dockerfile: Dockerfile
     ports:
       - "3000:3000"
-      
+    networks:
+      - db-nk
+
+  db:
+    container_name: db
+    image: db:1.0.0
+    # build:
+    #   context: db
+    #   dockerfile: Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: demodb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    networks:
+      - db-nk
+
+networks:
+  db-nk:
+    external:
+      name: db-network

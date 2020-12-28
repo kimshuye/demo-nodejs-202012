@@ -1,17 +1,17 @@
 const express = require("express");
 const app = express();
 
-const userGateway = require("./userGateway");
+// const userGateway = require("./userGateway");
+const callHello = require("./callHello");
 
-app.get("/users", (req, res) => {
-  userGateway.getAllUser().then((response) => {
-    res.send(response);
+app.get("/", (req, res) => {
+  callHello.getMessages().then((response) => {
+    let data1 = response.data.message
+    console.log(data1);
+    res.send(`${data1} World`);
   });
 });
 
-app.get("/users/1", async (req, res) => {
-  const response = await userGateway.getUser();
-  res.send(response);
-});
+
 
 module.exports = app;
