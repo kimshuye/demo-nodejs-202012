@@ -10,7 +10,7 @@ test("Show 'Hello World' Test", (done) => {
       .defaultReplyHeaders({ "access-control-allow-origin": "*" })
       .get("/")
       .reply(200,
-        '<html>Hello World</html>'
+        'Hello World'
       );
       
   request(app).get("/").expect(

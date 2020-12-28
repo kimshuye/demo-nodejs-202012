@@ -8,11 +8,11 @@ test("Get Message should be 'Hello'", async () => {
         .defaultReplyHeaders({ "access-control-allow-origin": "*" })
         .get("/messages")
         .reply(200,
-          {"message1":"Hello1"}
+          {"message":"Hello"}
           );
     // Verify
     const response = await callHello.getMessages();
     expect(response.code).toEqual(200);
-    expect(response.data.message1).toEqual('Hello1');
+    expect(response.data.message).toEqual('Hello');
 });
 

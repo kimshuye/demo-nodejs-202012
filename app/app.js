@@ -6,10 +6,8 @@ const callHello = require("./callHello");
 
 app.get("/", (req, res) => {
   callHello.getMessages().then((response) => {
-    console.log('response');
-    console.log(response);
-    let data1 = response.data.message
-    res.send(`<html>${data1} World</html>`);
+    let data1 = response
+    res.send(`<html>${data1.data.message} World</html>`);
   });
 });
 
