@@ -8,7 +8,7 @@ app.get("/", (req, res) => {
   callHello.getMessages().then((response) => {
     let data1 = response.data.message
     console.log(data1);
-    res.send(`${data1} World`);
+    res.send(`<html>${data1} World</html>`);
   });
 });
 
