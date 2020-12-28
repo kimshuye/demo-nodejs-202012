@@ -1,3 +1,5 @@
+
+const Sequelize = require("sequelize");
 class Welcometo extends Sequelize.Model {}
 
 const createWelcometoModel = (db) => {
@@ -8,7 +10,7 @@ const createWelcometoModel = (db) => {
     primaryKey: true,
     autoIncrement: true,
     },
-    name: Sequelize.STRING,
+    place: Sequelize.STRING,
   },
   {
     sequelize: db,

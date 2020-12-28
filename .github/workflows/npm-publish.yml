@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14.15.3
-      - run: cd app && npm install && npm run test
+      - run: cd app && npm install -g mysql2@2.2.5  && npm install && npm run test
 
   
 

@@ -20,8 +20,8 @@ db.sequelize = sequelize;
 
 // db.sync()
 // db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
-db.worldModel = require("./models/worldModel.js")(sequelize, Sequelize);
+//db.worldModel = require("./models/worldModel.js")(sequelize, Sequelize);
 
-db.sync();
+//db.sync();
 
 module.exports = db;
